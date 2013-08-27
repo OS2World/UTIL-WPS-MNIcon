@@ -1,0 +1,1 @@
+@repclass WPIcon MNIcon U

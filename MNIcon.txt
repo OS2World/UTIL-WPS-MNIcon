@@ -1,0 +1,72 @@
+MNIcon - enhanced icon class for the Workplace Shell (release 2: 02/09/96)
+
+"MNIcon" class is a replacement for the default "WPIcon" class.  It adds 
+'drag & drop' functionality to the icon class so that, to set the icon of an 
+object, you can simply drag and drop it on an icon file (*.ICO).
+
+The archive contains the following files:
+
+    MNIcon.doc   this file
+    MNIcon.c     class source
+    MNIcon.csc   SOM class definition
+    MNIcon.dll   class dll
+    install.cmd  installation script
+    uninst.cmd   uninstallation script
+    repclass.exe WPS class replacement utility
+
+This program is in public domain.
+
+1.  Installation
+
+    1) copy MNIcon.dll to a directory listed in your LIBPATH (e.g.,
+    C:\OS2\DLL);
+
+    2) execute "install.cmd" script;
+
+    3) reboot the system.
+
+2.  Uninstallation
+
+    1) execute "uninst.cmd" script;
+    
+    2) reboot the system.
+
+3.  Usage
+
+    To set the icon of an (non-icon) object to the icon of a *.ICO file,
+
+        1) open a view of the folder containing the *.ICO file so that you can
+        see the icon;
+
+        2) drag the object and drop it on the icon of the *.ICO file.
+
+    You can drop multiple objects on an icon.
+
+    You cannot drop a *.ICO icon file object on another *.ICO icon file object.
+
+4.  Compilation
+
+    This program is compiled with IBM C Set/2 (with ToolKit).  To re-build,
+    type "nmake -f MNIcon.mak".
+
+5.  Notes
+
+    The 'association' trick used in version 1.0 doesn't work any more with
+    Warp, so this version uses simpler 'class replacement' method.
+
+    Some extended attributes (EA) may be added by the system to the *.ICO files
+    (marking them as instances of 'MNIcon' class).  This may cause problems
+    when the *.ICO files with this EA is copied to a system without MNIcon.
+    If you experience problems, remove the EAs using the 'EAUTIL' utility 
+    (regular *.ICO files don't have any EA); e.g., to remove EAs from all 
+    *.ICO files in the current directory, type something like:
+
+        for %f in (*.ICO) do EAUTIL %f NUL /S
+
+    This program is tested on OS/2 Warp (with FixPack 17).
+    Although the program seems working so far, please use it at your own risk.
+
+
+Makoto Nagata
+mnagata@crl.com
+
