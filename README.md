@@ -5,7 +5,7 @@ Enhanced icon class for the Workplace Shell
 
 LICENSE
 ===============
-* Not Specified
+* Public Domain
 
 COMPILE TOOLS
 ===============
